@@ -1,0 +1,223 @@
+[gd_scene load_steps=11 format=3 uid="uid://cajdpo7hs0lhj"]
+
+[ext_resource type="Script" path="res://slot_machine.gd" id="1_heya6"]
+[ext_resource type="Texture2D" uid="uid://cigqaqyj55trh" path="res://cherries.png" id="2_n6u0o"]
+[ext_resource type="Texture2D" uid="uid://7ye3ufp6hd2c" path="res://seven.png" id="3_xaui3"]
+[ext_resource type="Texture2D" uid="uid://dxsahf4fvdq6i" path="res://bell.png" id="4_q0x0b"]
+[ext_resource type="Texture2D" uid="uid://pr6h0bkjxnc1" path="res://watermelon.png" id="5_03lpw"]
+[ext_resource type="Shader" path="res://mai2n.gdshader" id="6_q23gg"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rrby3"]
+load_path = "res://.godot/imported/cherries.png-7dea637d7b1e17c70a0b4da10288de81.ctex"
+
+[sub_resource type="Gradient" id="Gradient_t4s2t"]
+offsets = PackedFloat32Array(0, 0.493333, 0.92, 1)
+colors = PackedColorArray(1, 0, 1, 1, 0, 0.262745, 0.611765, 1, 1, 0.67451, 0, 1, 0.625, 0.520098, 0.229412, 1)
+
+[sub_resource type="Gradient" id="Gradient_5pi5x"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnniu"]
+shader = ExtResource("6_q23gg")
+shader_parameter/shock_color = Color(1, 0.313726, 0, 1)
+shader_parameter/amplitude = 30.0
+shader_parameter/frequecy = 10.0
+
+[node name="Main" type="Node2D"]
+
+[node name="Slot_machine" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_heya6")
+
+[node name="Button" type="Button" parent="Slot_machine"]
+layout_mode = 2
+offset_left = 929.0
+offset_top = 560.0
+offset_right = 1137.0
+offset_bottom = 627.0
+text = "Spin"
+
+[node name="GridContainer" type="GridContainer" parent="Slot_machine"]
+layout_mode = 0
+offset_right = 420.0
+offset_bottom = 314.0
+scale = Vector2(1.98, 1.98)
+columns = 4
+
+[node name="TextureRect" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_direction = 1
+layout_mode = 2
+texture = ExtResource("2_n6u0o")
+stretch_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_n6u0o")
+stretch_mode = 1
+
+[node name="TextureRect3" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_n6u0o")
+stretch_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_n6u0o")
+stretch_mode = 1
+
+[node name="TextureRect5" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_mode = 2
+texture = ExtResource("3_xaui3")
+stretch_mode = 1
+
+[node name="TextureRect7" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_n6u0o")
+stretch_mode = 1
+
+[node name="TextureRect8" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_mode = 2
+texture = ExtResource("4_q0x0b")
+stretch_mode = 1
+
+[node name="TextureRect9" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_n6u0o")
+stretch_mode = 1
+
+[node name="TextureRect6" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_03lpw")
+stretch_mode = 1
+
+[node name="TextureRect10" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_03lpw")
+stretch_mode = 1
+
+[node name="TextureRect11" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_03lpw")
+stretch_mode = 1
+
+[node name="TextureRect12" type="TextureRect" parent="Slot_machine/GridContainer"]
+layout_mode = 2
+texture = ExtResource("5_03lpw")
+stretch_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="Slot_machine"]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.0901961, 0.0705882, 0, 1)
+
+[node name="Label_balance" type="Label" parent="Slot_machine"]
+layout_mode = 0
+offset_left = 985.0
+offset_top = 485.0
+offset_right = 1046.0
+offset_bottom = 508.0
+text = "Balance"
+
+[node name="Label_spin" type="Label" parent="Slot_machine"]
+layout_mode = 0
+offset_left = 985.0
+offset_top = 517.0
+offset_right = 1046.0
+offset_bottom = 540.0
+text = "Spin"
+
+[node name="plus" type="Button" parent="Slot_machine"]
+layout_mode = 0
+offset_left = 1119.0
+offset_top = 511.0
+offset_right = 1137.0
+offset_bottom = 542.0
+text = "+"
+
+[node name="minus" type="Button" parent="Slot_machine"]
+layout_mode = 0
+offset_left = 1099.0
+offset_top = 511.0
+offset_right = 1117.0
+offset_bottom = 542.0
+text = "-"
+
+[node name="slot" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(0.00560468, 0.00560468)
+texture = SubResource("CompressedTexture2D_rrby3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+process_mode = 2
+visible = false
+position = Vector2(534, 399)
+scale = Vector2(2.27044, 1.88163)
+emitting = false
+amount = 941
+lifetime = 0.95
+speed_scale = 0.5
+emission_shape = 1
+emission_sphere_radius = 5.16
+direction = Vector2(-0.075, 0)
+spread = 74.09
+gravity = Vector2(0, -1000)
+initial_velocity_max = 121.21
+radial_accel_min = -21.21
+radial_accel_max = -21.21
+scale_amount_min = 0.0
+scale_amount_max = 5.6
+color_ramp = SubResource("Gradient_t4s2t")
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+process_mode = 2
+visible = false
+position = Vector2(532, 406)
+scale = Vector2(2.32, 1)
+emitting = false
+amount = 941
+lifetime = 0.95
+speed_scale = 0.45
+emission_shape = 1
+emission_sphere_radius = 5.16
+direction = Vector2(0.755, 0)
+spread = 74.09
+gravity = Vector2(0, -1000)
+initial_velocity_max = 121.21
+radial_accel_min = -21.21
+radial_accel_max = -21.21
+scale_amount_min = 0.0
+scale_amount_max = 5.6
+color_ramp = SubResource("Gradient_5pi5x")
+
+[node name="Label" type="Label" parent="."]
+process_mode = 2
+visible = false
+material = SubResource("ShaderMaterial_hnniu")
+offset_left = 451.0
+offset_top = 420.0
+offset_right = 15190.0
+offset_bottom = 4506.0
+scale = Vector2(0.011, 0.011)
+theme_override_font_sizes/font_size = 3000
+text = "Huge Win!"
+
+[node name="Button_ok" type="Button" parent="."]
+process_mode = 2
+visible = false
+offset_left = 508.0
+offset_top = 488.0
+offset_right = 538.0
+offset_bottom = 519.0
+text = "Ok"
+
+[connection signal="pressed" from="Slot_machine/Button" to="Slot_machine" method="_on_button_pressed"]
+[connection signal="pressed" from="Slot_machine/plus" to="Slot_machine" method="_on_plus_pressed"]
+[connection signal="pressed" from="Slot_machine/minus" to="Slot_machine" method="_on_minus_pressed"]
+[connection signal="pressed" from="Button_ok" to="Slot_machine" method="_on_button_ok_pressed"]
